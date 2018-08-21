@@ -1,0 +1,15 @@
+<!-- <input type="file" name="photo" ng2FileSelect [uploader]="uploader" />
+
+<button type="button" class="btn btn-success btn-s" 
+  (click)="uploader.uploadAll()" 
+  [disabled]="!uploader.getNotUploadedItems().length" >
+      Upload an Image
+</button> -->
+
+<!-- <input type="file" (change)="onFileChanged($event)"> -->
+
+<input 
+  type="file" (change)="onFileChanged($event)" 
+  #fileInput>
+<button (click)="fileInput.click()">Select File</button>
+<button (click)="onUpload()">Upload!</button>

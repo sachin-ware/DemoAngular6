@@ -7,8 +7,10 @@ import { AppComponent } from './app.component';
 import { Component1Component } from './component1/component1.component';
 import { Component2Component } from './component2/component2.component';
 import {CommonServiceService} from './services/common-service.service';
-import { Component3Component } from './component3/component3.component'
-
+import { Component3Component } from './component3/component3.component';
+import { FileUploadComponent } from './file-upload/file-upload.component'
+import { FileSelectDirective } from 'ng2-file-upload';
+import {HttpClientModule} from '@angular/common/http';
 const appRoutes: Route[] = 
   [
     {
@@ -22,6 +24,10 @@ const appRoutes: Route[] =
     {
       path:"c3",
       component:Component3Component
+    },
+    {
+      path:"upload",
+      component:FileUploadComponent
     }
   ];
 
@@ -30,11 +36,14 @@ const appRoutes: Route[] =
     AppComponent,
     Component1Component,
     Component2Component,
-    Component3Component
+    Component3Component,
+    FileUploadComponent,
+    FileSelectDirective
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    HttpClientModule,
     RouterModule.forRoot(appRoutes,
       { enableTracing: false } )
     
