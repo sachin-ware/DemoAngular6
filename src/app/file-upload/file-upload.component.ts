@@ -10,19 +10,14 @@ const URL = 'http://localhost:8082/uploadPic';
   styleUrls: ['./file-upload.component.css']
 })
 export class FileUploadComponent implements OnInit {
-  public uploader: FileUploader = new FileUploader({url: URL, itemAlias: 'photo',
-  disableMultipart:false});
+  imgUrl:String=null;
+
 
   selectedFile: File;
 
   constructor(private http:HttpClient) { }
 
   ngOnInit() {
-    this.uploader.onAfterAddingFile = (file) => { file.withCredentials = false; };
-    this.uploader.onCompleteItem = (item: any, response: any, status: any, headers: any) => {
-         console.log('ImageUpload:uploaded:', item, status, response);
-         alert('File uploaded successfully');
-     };
   }
 
 
@@ -32,16 +27,25 @@ export class FileUploadComponent implements OnInit {
     this.selectedFile = event.target.files[0]
   }
 
-  onUpload() {
-    // this.http is the injected HttpClient
 
+
+  onUpload() {
+    this.uploadToCloud().subscribe(event => {
+      console.log(event);
+      // if (event instanceof HttpResponse) {
+      //    console.log('File is completely uploaded!');
+      //  }
+     });
+    
+    
+
+  }
+
+  uploadToCloud(){
     const uploadData = new FormData();
-    uploadData.append('myFile', this.selectedFile, this.selectedFile.name);
-    //this.http.post('my-backend.com/file-upload', uploadData)
-    this.http.post(URL, uploadData)
-      .subscribe(event => {
-        console.log(event); 
-      });
+    uploadData.append('file', this.selectedFile);
+    return this.http.post(URL, uploadData);
+
   }
  
 }
