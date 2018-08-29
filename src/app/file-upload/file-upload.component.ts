@@ -11,41 +11,27 @@ const URL = 'http://localhost:8082/uploadPic';
 })
 export class FileUploadComponent implements OnInit {
   imgUrl:String=null;
-
-
   selectedFile: File;
 
   constructor(private http:HttpClient) { }
 
   ngOnInit() {
   }
-
-
-  
-
   onFileChanged(event) {
     this.selectedFile = event.target.files[0]
   }
 
-
-
   onUpload() {
-    this.uploadToCloud().subscribe(event => {
-      console.log(event);
-      // if (event instanceof HttpResponse) {
-      //    console.log('File is completely uploaded!');
-      //  }
-     });
-    
-    
-
+     this.uploadToCloud();
   }
 
   uploadToCloud(){
     const uploadData = new FormData();
-    uploadData.append('file', this.selectedFile);
-    return this.http.post(URL, uploadData);
-
+    uploadData.append('file', this.selectedFile,);
+    this.http.post('http://localhost:8082/uploadPic', uploadData,{responseType: 'text'} ).subscribe(event => {
+        console.log('Event:',event); // handle event here
+        this.imgUrl=event;
+      });
   }
  
 }
