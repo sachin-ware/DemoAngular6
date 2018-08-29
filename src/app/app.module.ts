@@ -11,6 +11,8 @@ import { Component3Component } from './component3/component3.component';
 import { FileUploadComponent } from './file-upload/file-upload.component'
 import { FileSelectDirective } from 'ng2-file-upload';
 import {HttpClientModule} from '@angular/common/http';
+import { UserRegistrationComponent } from './user-registration/user-registration.component';
+import {SuiModule} from 'ng2-semantic-ui';
 const appRoutes: Route[] = 
   [
     {
@@ -28,6 +30,10 @@ const appRoutes: Route[] =
     {
       path:"upload",
       component:FileUploadComponent
+    },
+    {
+      path:"reg",
+      component:UserRegistrationComponent
     }
   ];
 
@@ -38,16 +44,16 @@ const appRoutes: Route[] =
     Component2Component,
     Component3Component,
     FileUploadComponent,
-    FileSelectDirective
+    FileSelectDirective,
+    UserRegistrationComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
     RouterModule.forRoot(appRoutes,
-      { enableTracing: false } )
-    
-    
+      { enableTracing: false } ),
+      SuiModule
   ],
  
   providers: [CommonServiceService],

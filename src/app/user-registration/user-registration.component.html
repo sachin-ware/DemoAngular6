@@ -1,0 +1,84 @@
+<div class="ui raised very padded text container segment">
+
+<form class="ui form">
+  <div class="row">
+    <div class="col-lg-8">
+        <h4 class="ui dividing header">User Registration</h4>
+        <div class="field">
+          <label>Name</label>
+          <div class="two fields">
+            <div class="field">
+              <input type="text" name="shipping[first-name]" placeholder="First Name">
+            </div>
+            <div class="field">
+              <input type="text" name="shipping[last-name]" placeholder="Last Name">
+            </div>
+          </div>
+        </div>
+        
+        <div class="field">
+          <div class="ui left corner labeled input">
+            <input type="text" placeholder="E-Mail">
+            <div class="ui left corner label">
+              <i class="asterisk icon"></i>
+            </div>
+          </div>
+        </div>
+      
+        <div class="field">
+            <div class="ui left corner labeled input">
+              <input type="text" placeholder="User Name (e.g.sachin.ware)">
+              <div class="ui left corner label">
+                <i class="asterisk icon"></i>
+              </div>
+            </div>
+          </div>
+      
+          <div class="field">
+              <div class="ui left corner labeled input">
+                <input type="text" placeholder="Password">
+                <div class="ui left corner label">
+                  <i class="asterisk icon"></i>
+                </div>
+              </div>
+          </div>
+      
+          <div class="field">
+              <div class="ui left corner labeled input">
+                <input type="text" placeholder="Confirm Password">
+                <div class="ui left corner label">
+                  <i class="asterisk icon"></i>
+                </div>
+              </div>
+          </div>
+          <div class="ui large buttons centered">
+              <button class="positive ui button"> SAVE </button>
+              <div class="or"></div>
+              <button class="negative ui button">CANCEL</button>
+            </div>
+         
+        
+        <!-- <div class="ui button" tabindex="0">Register User</div>
+        <div class="ui button" tabindex="0">Cancel</div> -->
+    </div>
+    <div class="col-lg-4">
+        <div class="ui centered card">
+            <div class="image">
+                <img class="ui medium circular image" [(src)]="avatarUrl">
+            </div>
+            <div class="content">
+                <input 
+                type="file" (change)="onFileChanged($event)" 
+                #fileInput/>
+              <!-- <button (click)="fileInput.click()">Select File</button> -->
+              <button class="positive ui button" (click)="onUpload()">Upload</button>
+              <!-- <button (click)="onUpload()">Upload</button> -->
+            </div>
+          </div>
+
+    </div>
+  </div>
+ 
+</form>
+
+</div>
