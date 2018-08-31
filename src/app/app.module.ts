@@ -13,6 +13,7 @@ import { FileSelectDirective } from 'ng2-file-upload';
 import {HttpClientModule} from '@angular/common/http';
 import { UserRegistrationComponent } from './user-registration/user-registration.component';
 import {SuiModule} from 'ng2-semantic-ui';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 const appRoutes: Route[] = 
   [
     {
@@ -53,7 +54,8 @@ const appRoutes: Route[] =
     HttpClientModule,
     RouterModule.forRoot(appRoutes,
       { enableTracing: false } ),
-      SuiModule
+    SuiModule,
+    NgbModule,
   ],
  
   providers: [CommonServiceService],

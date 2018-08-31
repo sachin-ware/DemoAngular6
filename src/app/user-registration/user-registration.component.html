@@ -1,4 +1,4 @@
-<div class="ui raised very padded text container segment">
+<div class="ui raised very padded text container segment RegContainer">
 
 <form class="ui form">
   <div class="row">
@@ -8,17 +8,17 @@
           <label>Name</label>
           <div class="two fields">
             <div class="field">
-              <input type="text" name="shipping[first-name]" placeholder="First Name">
+              <input type="text" name="first-name" placeholder="First Name" [(ngModel)]="user.fname" required>
             </div>
             <div class="field">
-              <input type="text" name="shipping[last-name]" placeholder="Last Name">
+              <input type="text" name="last-name" placeholder="Last Name" [(ngModel)]="user.lname" required>
             </div>
           </div>
         </div>
         
         <div class="field">
           <div class="ui left corner labeled input">
-            <input type="text" placeholder="E-Mail">
+            <input type="text" name="e-mail"  placeholder="E-Mail" [(ngModel)]="user.email" required>
             <div class="ui left corner label">
               <i class="asterisk icon"></i>
             </div>
@@ -27,7 +27,7 @@
       
         <div class="field">
             <div class="ui left corner labeled input">
-              <input type="text" placeholder="User Name (e.g.sachin.ware)">
+              <input type="text" name="user-name" placeholder="User Name (e.g.sachin.ware)" [(ngModel)]="user.userName" required>
               <div class="ui left corner label">
                 <i class="asterisk icon"></i>
               </div>
@@ -36,7 +36,7 @@
       
           <div class="field">
               <div class="ui left corner labeled input">
-                <input type="text" placeholder="Password">
+                <input type="text"  name="password"  placeholder="Password" [(ngModel)]="user.password" required>
                 <div class="ui left corner label">
                   <i class="asterisk icon"></i>
                 </div>
@@ -45,17 +45,48 @@
       
           <div class="field">
               <div class="ui left corner labeled input">
-                <input type="text" placeholder="Confirm Password">
+                <input type="text"  name="c-password" placeholder="Confirm Password">
                 <div class="ui left corner label">
                   <i class="asterisk icon"></i>
                 </div>
               </div>
           </div>
-          <div class="ui large buttons centered">
-              <button class="positive ui button"> SAVE </button>
-              <div class="or"></div>
-              <button class="negative ui button">CANCEL</button>
+          <!-- <div class="field">
+            <form class="form-inline">
+              <div class="form-group">
+                <div class="input-group ui calendar">
+                  <input class="form-control" placeholder="yyyy-mm-dd"
+                         name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
+                  <div class="input-group-append">
+                    <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div> -->
+
+          <div class="field">
+          <div class="ui calendar" id="example2">
+              <div class="ui input right icon">
+                <input class="form-control" placeholder="yyyy-mm-dd"
+                         name="dob" [(ngModel)]="user.dob" ngbDatepicker #d="ngbDatepicker" required>
+                  <div class="input-group-append">
+                    <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button">
+                      <i class="calendar icon" ></i>
+                    </button>
+                  </div>
+              </div>
             </div>
+          </div>
+
+          <div class="ui divider"></div>
+          <div class="field">
+            <div class="ui large buttons centered saveCancel" >
+                <button class="positive ui button" (click)="saveClicked()"> SAVE </button>
+                <div class="or"></div>
+                <button class="negative ui button">CANCEL</button>
+            </div>
+          </div>
          
         
         <!-- <div class="ui button" tabindex="0">Register User</div>
@@ -71,7 +102,10 @@
                 type="file" (change)="onFileChanged($event)" 
                 #fileInput/>
               <!-- <button (click)="fileInput.click()">Select File</button> -->
-              <button class="positive ui button" (click)="onUpload()">Upload</button>
+              
+              <button class="positive ui button" (click)="onUpload()" style="width: 100%;">
+                  <i class="icon upload"></i>
+                UPLOAD</button>
               <!-- <button (click)="onUpload()">Upload</button> -->
             </div>
           </div>
