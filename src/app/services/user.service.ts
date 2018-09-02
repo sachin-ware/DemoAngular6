@@ -11,12 +11,12 @@ import { map } from 'rxjs/operators';
 })
 export class UserService {
 
-  private baseUrl: string = "https://sachin-ware-sb-rest-server.herokuapp.com/users";
+  private baseUrl: string = "https://sachin-ware-sb-rest-server.herokuapp.com";
 
   constructor(private _http:HttpClient) { }
 
   getUsers(): Observable<IUser[]>{
-    return this._http.get<IUser[]>(this.baseUrl)
+    return this._http.get<IUser[]>(this.baseUrl+'/users');
   }
 
   deleteUser(userId:Number){

@@ -56,7 +56,7 @@ export class UserRegistrationComponent implements OnInit {
 
       console.log('Saved User:',JSON.stringify(res));
    // {"userId":33,"userName":"sachin","password":"password","email":"sachin.ware@cognizant.com","fname":"sachin","lname":"ware","dob":1525132800000,"createdDate":1535865316208,"modifiedDate":1535865316208,"lastAccessed":null,"proPicUrl":"https://TestURL"}
-      this.user=res;
+     // this.user=res;
 
   });
   

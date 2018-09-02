@@ -1,6 +1,15 @@
 <div class="container">
-    <button class="btn btn-primary" (click)="newUser()">New User</button>
-
+  <div class="row">
+    <div class="col-lg-6 col-md-6">
+        <H5>[Total Records:{{users.length}}]</H5>
+    </div>
+    <div class="col-lg-4 col-md-4 "></div>
+    <div class="col-lg-1 col-md-1 ">
+        <button class="btn btn-primary pull-right" (click)="newUser()">New User</button>
+    </div>
+  </div>
+    
+  
   <table class="table table-stripe">
     <thead>
       <th>First Name</th>
@@ -18,7 +27,7 @@
         <td>{{usr.dob}}</td>
         <td>{{usr.userName}}</td>
         <td> <button class="btn btn-primary">Edit</button>
-          <button class="btn btn-danger" (click)="deleteUser(user)">Delete</button><td>
+          <button class="btn btn-danger" (click)="deleteUser(usr)">Delete</button><td>
       </tr>
     </tbody>
   </table>
