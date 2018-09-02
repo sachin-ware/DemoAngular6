@@ -14,6 +14,8 @@ import {HttpClientModule} from '@angular/common/http';
 import { UserRegistrationComponent } from './user-registration/user-registration.component';
 import {SuiModule} from 'ng2-semantic-ui';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {UserService} from '../app/services/user.service';
+import { UserListComponent } from './user-list/user-list.component';
 const appRoutes: Route[] = 
   [
     {
@@ -35,6 +37,10 @@ const appRoutes: Route[] =
     {
       path:"reg",
       component:UserRegistrationComponent
+    },
+    {
+      path:"user-list",
+      component:UserListComponent
     }
   ];
 
@@ -46,7 +52,8 @@ const appRoutes: Route[] =
     Component3Component,
     FileUploadComponent,
     FileSelectDirective,
-    UserRegistrationComponent
+    UserRegistrationComponent,
+    UserListComponent
   ],
   imports: [
     BrowserModule,
@@ -58,7 +65,7 @@ const appRoutes: Route[] =
     NgbModule,
   ],
  
-  providers: [CommonServiceService],
+  providers: [CommonServiceService, UserService],
   bootstrap: [AppComponent],
   
 })
