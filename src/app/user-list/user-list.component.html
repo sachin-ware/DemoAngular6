@@ -17,6 +17,7 @@
       <th>Email</th>
       <th>DOB</th>
       <th>User Name</th>
+      <th>Avatar</th>
       <th>Operation</th>
     </thead>
     <tbody>
@@ -26,6 +27,7 @@
         <td>{{usr.email}}</td>
         <td>{{usr.dob}}</td>
         <td>{{usr.userName}}</td>
+        <td><div ><img class="ui avatar image" [src]="usr.proPicUrl"></div></td>
         <td> <button class="btn btn-primary">Edit</button>
           <button class="btn btn-danger" (click)="deleteUser(usr)">Delete</button><td>
       </tr>
