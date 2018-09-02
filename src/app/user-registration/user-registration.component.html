@@ -100,10 +100,10 @@
             <div class="content">
                 <input 
                 type="file" (change)="onFileChanged($event)" 
-                #fileInput/>
+                #fileInput [disabled]="!user.userId"/>
               <!-- <button (click)="fileInput.click()">Select File</button> -->
               
-              <button class="positive ui button" (click)="onUpload()" style="width: 100%;">
+              <button class="positive ui button" (click)="onUpload()" style="width: 100%;" [disabled]="!user.userId" >
                   <i class="icon upload"></i>
                 UPLOAD</button>
               <!-- <button (click)="onUpload()">Upload</button> -->
