@@ -12,10 +12,14 @@ import { FileUploadComponent } from './file-upload/file-upload.component'
 import { FileSelectDirective } from 'ng2-file-upload';
 import {HttpClientModule} from '@angular/common/http';
 import { UserRegistrationComponent } from './user-registration/user-registration.component';
-import {SuiModule} from 'ng2-semantic-ui';
+import {SuiModule,SuiDropdownModule} from 'ng2-semantic-ui';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {UserService} from '../app/services/user.service';
 import { UserListComponent } from './user-list/user-list.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { HomeComponent } from './home/home.component';
 const appRoutes: Route[] = 
   [
     {
@@ -41,6 +45,14 @@ const appRoutes: Route[] =
     {
       path:"user-list",
       component:UserListComponent
+    },
+    {
+      path:"",
+      component:HomeComponent
+    },
+    {
+      path:"home",
+      component:HomeComponent
     }
   ];
 
@@ -53,7 +65,12 @@ const appRoutes: Route[] =
     FileUploadComponent,
     FileSelectDirective,
     UserRegistrationComponent,
-    UserListComponent
+    UserListComponent,
+    DashboardComponent,
+    HeaderComponent,
+    FooterComponent,
+    HomeComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -63,6 +80,8 @@ const appRoutes: Route[] =
       { enableTracing: false } ),
     SuiModule,
     NgbModule,
+    SuiDropdownModule
+    
   ],
  
   providers: [CommonServiceService, UserService],
