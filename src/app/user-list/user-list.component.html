@@ -28,7 +28,7 @@
         <td>{{usr.dob}}</td>
         <td>{{usr.userName}}</td>
         <td><div ><img class="ui avatar image" [src]="usr.proPicUrl"></div></td>
-        <td> <button class="btn btn-primary">Edit</button>
+        <td> <button class="btn btn-primary" (click)="editUser(usr)">Edit</button>
           <button class="btn btn-danger" (click)="deleteUser(usr)">Delete</button><td>
       </tr>
     </tbody>

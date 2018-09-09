@@ -11,8 +11,11 @@ import { map } from 'rxjs/operators';
 })
 export class UserService {
 
-  private baseUrl: string = "https://sachin-ware-sb-rest-server.herokuapp.com";
+  public user:IUser=null;
 
+
+  public baseUrl: string = "https://sachin-ware-sb-rest-server.herokuapp.com";
+  //public baseUrl: string = "http://localhost:8082";
   constructor(private _http:HttpClient) { }
 
   getUsers(): Observable<IUser[]>{
@@ -23,4 +26,15 @@ export class UserService {
     return this._http.delete(this.baseUrl+'/user/'+userId).pipe(
       map(res=>res))
   }
+
+
+
+  getUser(){
+    return this.user;
+  }
+  setUser(user)
+  {
+    this.user=user;
+  }
+
 }

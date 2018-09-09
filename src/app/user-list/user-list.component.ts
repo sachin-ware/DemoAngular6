@@ -26,7 +26,12 @@ export class UserListComponent implements OnInit {
   }
 
   newUser(){   
-    this._router.navigate(['/reg'])
+    this._router.navigate(['/reg']);
+  }
+
+  editUser(usr){
+    this._userService.setUser(usr);
+    this._router.navigate(['/reg']);
   }
 
 }

@@ -68,7 +68,9 @@
           <div class="field">
           <div class="ui calendar" id="example2">
               <div class="ui input right icon">
+                  {{user.dob}}
                 <input class="form-control" placeholder="yyyy-mm-dd"
+                (ngChange)="formatDate()"
                          name="dob" [(ngModel)]="user.dob" ngbDatepicker #d="ngbDatepicker" required>
                   <div class="input-group-append">
                     <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button">
@@ -95,7 +97,7 @@
     <div class="col-lg-4">
         <div class="ui centered card">
             <div class="image">
-                <img class="ui medium circular image" [(src)]="avatarUrl">
+                <img class="ui medium circular image" [(src)]="user.proPicUrl">
             </div>
             <div class="content">
                 <input 

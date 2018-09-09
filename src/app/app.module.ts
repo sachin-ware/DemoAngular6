@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule,Route} from '@angular/router';
+import { DatePipe } from '@angular/common';
 
 import { AppComponent } from './app.component';
 import { Component1Component } from './component1/component1.component';
@@ -84,7 +85,7 @@ const appRoutes: Route[] =
     
   ],
  
-  providers: [CommonServiceService, UserService],
+  providers: [CommonServiceService, UserService,DatePipe],
   bootstrap: [AppComponent],
   
 })
