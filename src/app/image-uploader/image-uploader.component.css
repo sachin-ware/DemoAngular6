@@ -1,0 +1,22 @@
+.nopad{
+    padding: 0px;
+}
+
+img{
+   width: 100%; 
+}
+
+.row1,.row2{
+    height: 150px;
+}
+
+.imgGrp{
+    width:50%;
+    height:300px;
+    background-color: gray; 
+    margin: auto;
+}
+
+.vertImg{
+    height:300px;
+}

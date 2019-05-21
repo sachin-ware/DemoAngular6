@@ -1,0 +1,23 @@
+
+<div  *ngFor="let group of imagesGroups">
+  <section>
+  <div class="row imgGrp">
+      <div class="col-md-3 nopad"  >
+        <img class="vertImg"  src="{{group[0].url}}">
+      </div>
+      <div class="col-md-9 nopad">
+        <div class="row nopad">
+          <div class="col-md-4 nopad "><img class="row1" src="{{group[1].url}}"></div>
+          <div class="col-md-4 nopad "><img class="row1" src="{{group[2].url}}"></div>
+          <div class="col-md-4 nopad "><img class="row1" src="{{group[3].url}}"></div>
+        </div>
+        <div class="row nopad">
+            <div class="col-md-4 nopad "><img class="row2" src="{{group[4].url}}"></div>
+            <div class="col-md-4 nopad "><img class="row2" src="{{group[5].url}}"></div>
+            <div class="col-md-4 nopad "><img class="row2" src="{{group[6].url}}"></div>
+          </div>
+      </div>
+    </div>
+  </section>
+  <br>
+</div>
