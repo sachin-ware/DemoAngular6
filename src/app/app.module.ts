@@ -21,6 +21,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
+import { ImageUploaderComponent } from './image-uploader/image-uploader.component';
+import { ImageGridComponent } from './image-grid/image-grid.component';
 const appRoutes: Route[] = 
   [
     {
@@ -54,6 +56,10 @@ const appRoutes: Route[] =
     {
       path:"home",
       component:HomeComponent
+    },
+    {
+      path:"UploadImages",
+      component:ImageUploaderComponent
     }
   ];
 
@@ -71,6 +77,8 @@ const appRoutes: Route[] =
     HeaderComponent,
     FooterComponent,
     HomeComponent,
+    ImageUploaderComponent,
+    ImageGridComponent,
     
   ],
   imports: [
