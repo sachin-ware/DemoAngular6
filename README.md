@@ -28,3 +28,18 @@ Cloudinary- A cloud that stores the images and videos and other media files.
 
 
 Project Setup steps:
+
+install node version 10.* that is compatible with angular 6
+install angualar cli by using command as  "npm install -g @angular/cli" use -g flag to install cli globally.
+
+then go to root directory of the project and fire the command "npm install"
+this command will install all dependant packages required for the project.
+after successful installation of npm install
+run > ng serve 
+
+your application will be started on following url :
+
+http://localhost:4200
+
+
+
